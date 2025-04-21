@@ -25,9 +25,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Run linters
+      - name: Run ESLint and Stylelint
         uses: wearerequired/lint-action@v2
         with:
           eslint: true
           stylelint: true
-          htmlhint: true
+
+      - name: Run HTMLHint
+        run: pnpm lint:html
