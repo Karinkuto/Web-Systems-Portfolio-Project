@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-    body {
-       padding-inline: 24px;
-    }
+  body {
+    padding-inline: 24px;
+  }
 }
