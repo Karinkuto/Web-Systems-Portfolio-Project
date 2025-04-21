@@ -9,7 +9,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "lint:css": "stylelint \"src/**/*.css\"",
-    "lint:html": "htmlhint \"./**/*.html\""
+    "lint:html": "htmlhint \"./**/*.html\"",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "lucide-react": "^0.501.0",
@@ -28,6 +29,7 @@
     "globals": "^16.0.0",
     "htmlhint": "^1.1.4",
     "postcss": "8.4.38",
+    "prettier": "^3.5.3",
     "stylelint": "^16.18.0",
     "stylelint-config-standard": "^38.0.0",
     "stylelint-config-tailwindcss": "^1.0.0",
