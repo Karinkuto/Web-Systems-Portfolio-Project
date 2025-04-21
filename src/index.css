@@ -4,6 +4,6 @@
 
 @layer base {
     body {
-        @apply px-[24px];
+       padding-inline: 24px;
     }
 }
