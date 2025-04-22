@@ -1,9 +1,10 @@
-export default function Card({ children, image, reverse = false }) {
+export default function Card({ children, image, reverse = false, onClick }) {
   const flexDirection = reverse ? "md:flex-row-reverse" : "md:flex-row";
 
   return (
     <div
       className={`group flex flex-col hover:cursor-pointer ${flexDirection} rounded-[24px] md:p-[24px] p-[16px] ring-border ring-[1px] bg-white gap-[24px] md:max-w-[1156px] sm:max-w-[554px] md:h-fit sm:h-fit hover:ring-cardBorderHover hover:shadow-card hover:ring-[2px] transition-all ease-in-out`}
+      onClick={onClick}
     >
       {image && (
         <div className="flex-1 basis-1/2 flex justify-center items-center md:h-full">
