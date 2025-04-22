@@ -66,16 +66,12 @@ Dialog.Image = function DialogImage({ src, alt = "", children }) {
 };
 
 Dialog.Header = function DialogHeader({ children }) {
-  return (
-    <div className="flex flex-col gap-[12px]">{children}</div>
-  );
+  return <div className="flex flex-col gap-[12px]">{children}</div>;
 };
 
 Dialog.Title = function DialogTitle({ children }) {
   return (
-    <div
-      className="w-fit h-fit max-w-[220px] md:max-w-none text-[32px]/[44px] tracking-[0.03em] text-cardTitle font-bold"
-    >
+    <div className="w-fit h-fit max-w-[220px] md:max-w-none text-[32px]/[44px] tracking-[0.03em] text-cardTitle font-bold">
       {children}
     </div>
   );
@@ -83,29 +79,21 @@ Dialog.Title = function DialogTitle({ children }) {
 
 Dialog.Subtitle = function DialogSubtitle({ place, dev, year }) {
   return (
-    <div
-      className="w-fit h-fit flex items-center gap-[12px] tracking-[0.03em] py-[8px] md:text-[18px/24px] text-[13px]/[16px]"
-    >
+    <div className="w-fit h-fit flex items-center gap-[12px] tracking-[0.03em] py-[8px] md:text-[18px/24px] text-[13px]/[16px]">
       {place && (
-        <span
-          className="text-cardSubtitleMain uppercase md:font-medium font-semibold"
-        >
+        <span className="text-cardSubtitleMain uppercase md:font-medium font-semibold">
           {place}
         </span>
       )}
       <span className="w-[8px] h-[8px] rounded-full bg-cardSubtitleDot" />
       {dev && (
-        <span
-          className="text-cardSubtitleRest md:font-normal font-semibold"
-        >
+        <span className="text-cardSubtitleRest md:font-normal font-semibold">
           {dev}
         </span>
       )}
       <span className="w-[8px] h-[8px] rounded-full bg-cardSubtitleDot" />
       {year && (
-        <span
-          className="text-cardSubtitleRest md:font-normal font-semibold"
-        >
+        <span className="text-cardSubtitleRest md:font-normal font-semibold">
           {year}
         </span>
       )}
@@ -119,13 +107,9 @@ Dialog.Body = function DialogBody({ children }) {
   const meta = children.slice(1);
 
   return (
-    <div
-      className="w-full h-fit flex flex-col md:flex-row md:gap-[48px] gap-[12px]"
-    >
+    <div className="w-full h-fit flex flex-col md:flex-row md:gap-[48px] gap-[12px]">
       <div className="flex-1 md:basis-8/12">{content}</div>
-      <div
-        className="flex-1 md:basis-4/12 flex flex-col items-start"
-      >
+      <div className="flex-1 md:basis-4/12 flex flex-col items-start">
         {meta}
       </div>
     </div>
@@ -134,9 +118,7 @@ Dialog.Body = function DialogBody({ children }) {
 
 Dialog.Footer = function DialogFooter({ children }) {
   return (
-    <div
-      className="w-full md:max-h-[153px] h-[72px] flex justify-center md:pt-[16px] md:gap-[24px] gap-[12px]"
-    >
+    <div className="w-full md:max-h-[153px] h-[72px] flex justify-center md:pt-[16px] md:gap-[24px] gap-[12px]">
       {children}
     </div>
   );
@@ -144,9 +126,7 @@ Dialog.Footer = function DialogFooter({ children }) {
 
 Dialog.Content = function DialogContent({ children }) {
   return (
-    <div
-      className="w-fit h-fit flex flex-col text-cardContentText md:text-[16px/24px] text-[15px/16px] font-normal gap-[24px]"
-    >
+    <div className="w-fit h-fit flex flex-col text-cardContentText md:text-[16px/24px] text-[15px/16px] font-normal gap-[24px]">
       {children}
     </div>
   );
@@ -159,7 +139,5 @@ Dialog.Tags = function DialogTags({ children }) {
 };
 
 Dialog.Separator = function DialogSeparator() {
-  return (
-    <div className="w-full h-px bg-border my-4" />
-  );
+  return <div className="w-full h-px bg-border my-4" />;
 };
