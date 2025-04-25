@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 const NAV_LINKS = [
   { label: "Portfolio", href: "#" },
   { label: "About", href: "#" },
-  { label: "Contact", href: "#" }
+  { label: "Contact", href: "#" },
 ];
 
 export default function Navbar() {
@@ -24,7 +24,7 @@ export default function Navbar() {
   }, [menuOpen]);
 
   return (
-    <nav className="sticky top-0 left-0 right-0 z-50 bg-white" >
+    <nav className="sticky top-0 left-0 right-0 z-50 bg-white">
       {/* Overlay */}
       <div
         className={`fixed inset-0 z-40 bg-[#2230D2CC] backdrop-blur-sm transition-transform duration-300 ${
@@ -33,7 +33,7 @@ export default function Navbar() {
         aria-hidden={!menuOpen}
       >
         <div className="flex flex-col w-full pt-32 gap-2">
-          {NAV_LINKS.map(link => (
+          {NAV_LINKS.map((link) => (
             <a
               key={link.label}
               href={link.href}
@@ -47,7 +47,12 @@ export default function Navbar() {
       </div>
       {/* Navbar */}
       <div className="flex justify-between items-center h-[72px] px-4 md:px-[143px]">
-        <a href="#" className="text-primary font-bold text-[18px/20px] px-4 py-2">My Logo</a>
+        <a
+          href="#"
+          className="text-primary font-bold text-[18px/20px] px-4 py-2"
+        >
+          My Logo
+        </a>
         {/* Hamburger */}
         <button
           type="button"
@@ -56,26 +61,34 @@ export default function Navbar() {
           aria-controls="mobile-nav"
           aria-expanded={menuOpen}
           onClick={() => setMenuOpen(!menuOpen)}
-          onKeyDown={e => {
+          onKeyDown={(e) => {
             if (e.key === "Enter" || e.key === " ") setMenuOpen(!menuOpen);
           }}
         >
-          <span className={`absolute left-1/2 top-1/2 w-6 h-0.5 rounded transition-all duration-300 ${menuOpen ? "rotate-45 bg-white" : "bg-primary -translate-y-1.5"} transform -translate-x-1/2`} />
-          <span className={`absolute left-1/2 top-1/2 w-6 h-0.5 rounded transition-all duration-300 ${menuOpen ? "opacity-0" : "bg-primary"} transform -translate-x-1/2`} />
-          <span className={`absolute left-1/2 top-1/2 w-6 h-0.5 rounded transition-all duration-300 ${menuOpen ? "-rotate-45 bg-white" : "bg-primary translate-y-1.5"} transform -translate-x-1/2`} />
+          <span
+            className={`absolute left-1/2 top-1/2 w-6 h-0.5 rounded transition-all duration-300 ${menuOpen ? "rotate-45 bg-white" : "bg-primary -translate-y-1.5"} transform -translate-x-1/2`}
+          />
+          <span
+            className={`absolute left-1/2 top-1/2 w-6 h-0.5 rounded transition-all duration-300 ${menuOpen ? "opacity-0" : "bg-primary"} transform -translate-x-1/2`}
+          />
+          <span
+            className={`absolute left-1/2 top-1/2 w-6 h-0.5 rounded transition-all duration-300 ${menuOpen ? "-rotate-45 bg-white" : "bg-primary translate-y-1.5"} transform -translate-x-1/2`}
+          />
         </button>
 
         {/* Desktop nav */}
         <ul className="hidden md:flex gap-4 text-cardContentText font-medium text-[15px]/[20px]">
-          {NAV_LINKS.map(link => (
+          {NAV_LINKS.map((link) => (
             <li key={link.label}>
-              <a href={link.href} className="hover:text-primary transition-colors px-4 py-2">
+              <a
+                href={link.href}
+                className="hover:text-primary transition-colors px-4 py-2"
+              >
                 {link.label}
               </a>
             </li>
           ))}
         </ul>
-        
       </div>
     </nav>
   );

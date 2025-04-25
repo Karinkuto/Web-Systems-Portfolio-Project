@@ -18,7 +18,7 @@ export default {
         cardSubtitleRest: "#6B778C",
         cardContentText: "#344563",
         appBg: "#f4f5f7",
-        heroIcon: "#505F79"
+        heroIcon: "#505F79",
       },
       boxShadow: {
         button: "0px 8px 16px 0px #4053FC3D",
