@@ -1,8 +1,8 @@
 import React from "react";
 import { Twitter, Linkedin, Github, HandMetal, BookOpen } from "lucide-react";
-import Button from "../ui/button";
-import LanguageCard from "../LanguageCard";
-import { Accordion } from "../ui/Accordion";
+import Button from "@/ui/button";
+import LanguageCard from "@/sections/footerComponents/languageCard";
+import { Accordion } from "@/ui/accordion";
 
 export default function About() {
   const languages = [

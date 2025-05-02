@@ -47,9 +47,14 @@ export default function Dialog({ children, isOpen, onClose }) {
   );
 }
 
-Dialog.Image = function DialogImage({ src, alt = "", children }) {
+Dialog.Image = function DialogImage({
+  src,
+  alt = "",
+  children,
+  className = "",
+}) {
   return (
-    <div className="w-full flex justify-center items-center">
+    <div className={`w-full flex justify-center items-center ${className}`}>
       <div className="w-full h-full">
         {src ? (
           <img
@@ -65,8 +70,10 @@ Dialog.Image = function DialogImage({ src, alt = "", children }) {
   );
 };
 
-Dialog.Header = function DialogHeader({ children }) {
-  return <div className="flex flex-col gap-[12px]">{children}</div>;
+Dialog.Header = function DialogHeader({ children, className = "" }) {
+  return (
+    <div className={`flex flex-col gap-[8px] ${className}`}>{children}</div>
+  );
 };
 
 Dialog.Title = function DialogTitle({ children }) {
@@ -101,13 +108,15 @@ Dialog.Subtitle = function DialogSubtitle({ place, dev, year }) {
   );
 };
 
-Dialog.Body = function DialogBody({ children }) {
+Dialog.Body = function DialogBody({ children, className = "" }) {
   // Expecting children: [content, tags, separator, footer] in order
   const content = children[0];
   const meta = children.slice(1);
 
   return (
-    <div className="w-full h-fit flex flex-col md:flex-row md:gap-[48px] gap-[12px]">
+    <div
+      className={`w-full h-fit flex flex-col md:flex-row md:gap-[48px] gap-[12px] ${className}`}
+    >
       <div className="flex-1 md:basis-8/12">{content}</div>
       <div className="flex-1 md:basis-4/12 flex flex-col items-start">
         {meta}

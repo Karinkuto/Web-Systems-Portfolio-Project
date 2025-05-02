@@ -1,6 +1,6 @@
 import React from "react";
-import About from "./about";
-import Contact from "./contact";
+import About from "@/sections/footerComponents/about";
+import Contact from "@/sections/footerComponents/contact";
 
 export default function Footer() {
   return (

@@ -1,8 +1,8 @@
-import DesktopNav from "./navbarComponents/desktop";
-import MobileNav from "./navbarComponents/mobile";
-import Toggle from "./navbarComponents/toggle";
-import useMobileDetection from "../../hooks/useMobileDetection.js";
-import useBodyScrollLock from "../../hooks/useBodyScrollLock.js";
+import DesktopNav from "@/sections/navbarComponents/desktop";
+import MobileNav from "@/sections/navbarComponents/mobile";
+import Toggle from "@/sections/navbarComponents/toggle";
+import useMobileDetection from "@/hooks/useMobileDetection";
+import useBodyScrollLock from "@/hooks/useBodyScrollLock";
 import { useState } from "react";
 
 export default function Navbar() {
