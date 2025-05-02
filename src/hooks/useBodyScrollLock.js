@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
 /**
  * Hook that prevents body scrolling when isLocked is true
@@ -7,14 +7,14 @@ import { useEffect } from 'react';
 export default function useBodyScrollLock(isLocked) {
   useEffect(() => {
     if (isLocked) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     }
 
     // Cleanup function to reset overflow when component unmounts
     return () => {
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     };
   }, [isLocked]); // Re-run effect when isLocked changes
 }
