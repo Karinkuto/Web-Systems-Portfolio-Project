@@ -16,10 +16,10 @@ export default function About() {
       title: "Languages",
       content: (
         <div className="p-3 flex flex-wrap gap-3">
-          {languages.map((lang) => (
-            <LanguageCard key={lang.name} name={lang.name} icon={lang.icon} />
-          ))}
-        </div>
+            {languages.map((lang) => (
+              <LanguageCard key={lang.name} name={lang.name} icon={lang.icon} />
+            ))}
+          </div>
       ),
     },
     {

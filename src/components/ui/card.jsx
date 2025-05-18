@@ -3,7 +3,7 @@ export default function Card({ children, image, reverse = false, onClick }) {
 
   return (
     <div
-      className={`group flex flex-col hover:cursor-pointer ${flexDirection} rounded-[24px] md:p-[24px] p-[16px] ring-border ring-[1px] bg-white gap-[24px] md:max-w-[1156px] sm:max-w-[554px] md:min-h-[496px] md:h-[496px] sm:h-fit hover:ring-cardBorderHover hover:shadow-card hover:ring-[2px] transition-all ease-in-out`}
+      className={`group flex flex-col hover:cursor-pointer ${flexDirection} rounded-[24px] md:p-[24px] p-[16px] ring-border ring-[1px] bg-white gap-[24px] md:max-w-[1156px] sm:max-w-[554px] min-h-[300px] md:min-h-[400px] hover:ring-cardBorderHover hover:shadow-card hover:ring-[2px] transition-all ease-in-out h-auto`}
       onClick={onClick}
       onKeyDown={(e) => {
         if (e.key === "Enter" || e.key === " ") {
@@ -12,16 +12,18 @@ export default function Card({ children, image, reverse = false, onClick }) {
       }}
     >
       {image && (
-        <div className="flex-1 basis-1/2 flex justify-center items-stretch md:h-full">
-          <div className="w-full h-full">
+        <div className="flex-1 basis-1/2 flex">
+          <div className="w-full h-full min-h-[200px] md:min-h-[400px] relative">
             {typeof image === "string" ? (
               <img
                 src={image}
                 alt=""
-                className="w-full h-full object-cover rounded-[8px]"
+                className="absolute inset-0 w-full h-full object-cover rounded-[8px]"
               />
             ) : (
-              image
+              <div className="absolute inset-0 w-full h-full">
+                {image}
+              </div>
             )}
           </div>
         </div>

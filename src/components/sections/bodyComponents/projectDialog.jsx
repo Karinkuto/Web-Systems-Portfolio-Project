@@ -31,7 +31,19 @@ export default function ProjectDialog({ project, isOpen, onClose }) {
 
         <Dialog.Body>
           <Dialog.Content>
-            <p>{detailedDescription}</p>
+            {Array.isArray(detailedDescription) ? (
+              detailedDescription.map((paragraph, index) => {
+                // Create a unique key by combining the first 10 chars of the paragraph
+                const key = `para-${paragraph.substring(0, 10).replace(/\s+/g, '-')}-${index}`;
+                return (
+                  <p key={key} className="w-full mb-4 last:mb-0">
+                    {paragraph}
+                  </p>
+                );
+              })
+            ) : (
+              <p className="w-full">{detailedDescription}</p>
+            )}
           </Dialog.Content>
           <div>
             <Dialog.Tags>

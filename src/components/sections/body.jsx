@@ -18,7 +18,7 @@ export default function Body() {
 
   return (
     <>
-      <section className="flex flex-col items-center gap-[142px] py-[130px] px-[16px] md:py-[142px] md:px-[142px]">
+      <section className="flex flex-col items-center gap-20 md:gap-32 py-16 md:py-24 lg:py-32 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 w-full">
         {projects.map((project) => (
           <ProjectCard
             key={project.id}
