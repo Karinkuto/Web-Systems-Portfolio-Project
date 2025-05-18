@@ -27,6 +27,7 @@ export default {
         button: "0px 8px 16px 0px #4053FC3D",
         white: "0px 8px 16px 0px rgba(255, 255, 255, 0.5)",
         card: "0px 48px 48px 0px #252F8914",
+        navbar: "0px 0px 16px 0px #4053FC3D",
       },
     },
   },

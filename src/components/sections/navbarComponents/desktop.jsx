@@ -9,7 +9,7 @@ export default function DesktopNav() {
     <div className="flex items-center gap-[10px]">
       {NAVLINKS.map((link) => (
         <a
-          className="w-[86px] h-[40px] py-[10px] px-[12px] font-[Poppins] font-medium text-[15px] leading-[20px] text-center align-middle"
+          className="w-[86px] h-[40px] py-[10px] px-[12px] font-[Poppins] font-medium text-[15px] leading-[20px] text-center align-middle hover:text-primary transition-colors"
           key={link.label}
           href={link.href}
         >

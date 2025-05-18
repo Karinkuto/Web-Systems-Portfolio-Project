@@ -27,7 +27,7 @@ export default function Dialog({ children, isOpen, onClose }) {
       style={{ border: "none", padding: 0, margin: 0 }}
     >
       <div
-        className="flex flex-col rounded-[24px] md:p-[24px] p-[16px] ring-border ring-[1px] bg-white gap-[24px] md:max-w-[1156px] sm:max-w-[554px] w-full max-h-[90vh] mt-8 overflow-y-auto transition-all ease-in-out relative"
+        className="flex flex-col rounded-[24px] p-[24px] ring-border ring-[1px] bg-white gap-[24px] max-w-[1156px] w-full max-h-[90vh] mt-8 mx-4 overflow-y-auto transition-all ease-in-out relative"
         onClick={(e) => e.stopPropagation()}
         onKeyDown={(e) => e.stopPropagation()}
         tabIndex={-1}
@@ -115,10 +115,10 @@ Dialog.Body = function DialogBody({ children, className = "" }) {
 
   return (
     <div
-      className={`w-full h-fit flex flex-col md:flex-row md:gap-[48px] gap-[12px] ${className}`}
+      className={`w-full min-w-[310px] h-fit flex flex-col lg:flex-row lg:gap-[72px] gap-[24px] ${className}`}
     >
-      <div className="flex-1 md:basis-8/12">{content}</div>
-      <div className="flex-1 md:basis-4/12 flex flex-col items-start">
+      <div className="flex-1 lg:basis-8/12">{content}</div>
+      <div className="flex-1 lg:basis-4/12 flex flex-col items-start min-w-[310px] mt-2">
         {meta}
       </div>
     </div>
@@ -135,7 +135,7 @@ Dialog.Footer = function DialogFooter({ children }) {
 
 Dialog.Content = function DialogContent({ children }) {
   return (
-    <div className="w-fit h-fit flex flex-col text-cardContentText md:text-[16px/24px] text-[15px/16px] font-normal gap-[24px]">
+    <div className="w-full h-fit flex flex-col text-start text-cardContentText md:text-[16px/24px] text-[15px/16px] font-normal gap-[24px]">
       {children}
     </div>
   );

@@ -1,29 +1,19 @@
 import React, { useState } from "react";
-import { ChevronDown, ChevronRight } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
-export default function AccordionItem({
-  title,
-  children,
-  defaultOpen = false,
-}) {
-  const [isOpen, setIsOpen] = useState(defaultOpen);
-
-  const toggleAccordion = () => {
-    setIsOpen(!isOpen);
-  };
-
+const AccordionItem = ({ title, children, isOpen, onClick }) => {
   const handleKeyDown = (e) => {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
-      toggleAccordion();
+      onClick();
     }
   };
 
   return (
-    <div className="border-b border-border">
+    <div className="border-b border-border overflow-hidden">
       <button
         className="flex items-center justify-between py-4 cursor-pointer w-full text-left"
-        onClick={toggleAccordion}
+        onClick={onClick}
         onKeyDown={handleKeyDown}
         aria-expanded={isOpen}
         type="button"
@@ -31,33 +21,34 @@ export default function AccordionItem({
         <h3 className="text-base md:text-lg font-medium text-cardTitle">
           {title}
         </h3>
-        <div className="text-primary">
-          {isOpen ? (
-            <ChevronDown className="rotate-180 transition-transform duration-300" />
-          ) : (
-            <ChevronDown className="transition-transform duration-300" />
-          )}
-        </div>
+        <ChevronDown
+          className={`text-primary transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+        />
       </button>
       <div
-        className={`overflow-hidden transition-all duration-300 ${
-          isOpen ? "max-h-96 pb-4" : "max-h-0"
-        }`}
+        className={`transition-all duration-300 ease-in-out overflow-hidden ${isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}`}
       >
-        {children}
+        <div className="pb-4">{children}</div>
       </div>
     </div>
   );
-}
+};
 
 export function Accordion({ items }) {
+  const [openIndex, setOpenIndex] = useState(0);
+
+  const handleItemClick = (index) => {
+    setOpenIndex((prevIndex) => (prevIndex === index ? -1 : index));
+  };
+
   return (
     <div className="w-full">
       {items.map((item, index) => (
         <AccordionItem
           key={`accordion-${item.title.replace(/\s+/g, "-").toLowerCase()}`}
           title={item.title}
-          defaultOpen={index === 0}
+          isOpen={openIndex === index}
+          onClick={() => handleItemClick(index)}
         >
           {item.content}
         </AccordionItem>

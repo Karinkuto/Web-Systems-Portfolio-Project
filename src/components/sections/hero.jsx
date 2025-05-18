@@ -2,7 +2,7 @@ import { Twitter, Linkedin, Github, HandMetal, BookOpen } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative flex flex-col justify-center min-h-screen w-full px-0 overflow-x-hidden">
+    <section className="relative flex flex-col justify-center min-h-screen w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 overflow-x-hidden">
       <div
         className="absolute inset-0 w-full h-full bg-white z-0 rounded-bl-[64px] md:rounded-bl-[120px]"
         aria-hidden="true"
@@ -11,10 +11,10 @@ export default function Hero() {
         src="/header-bg.svg"
         alt="Background"
         aria-hidden="true"
-        className="pointer-events-none select-none absolute inset-0 w-full h-full object-cover p-4 md:p-0 z-0 rounded-bl-[64px] md:rounded-bl-[120px]"
+        className="pointer-events-none select-none absolute w-full h-full object-cover md:object-contain md:py-12 z-0 rounded-bl-[64px] md:rounded-bl-[120px]"
         draggable="false"
       />
-      <div className="max-w-2xl mx-auto py-24 md:py-0 relative z-10 px-6 md:px-0">
+      <div className="max-w-2xl mx-auto py-24 md:py-0 relative z-10 w-full">
         <h1 className="text-4xl md:text-5xl font-bold text-cardTitle mb-4 leading-tight">
           I'm Alexandra.
           <br />
