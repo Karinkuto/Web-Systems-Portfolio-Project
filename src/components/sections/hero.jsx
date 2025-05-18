@@ -11,7 +11,7 @@ export default function Hero() {
         src="/header-bg.svg"
         alt="Background"
         aria-hidden="true"
-        className="pointer-events-none select-none absolute w-full h-full object-contain md:py-12 z-0 rounded-bl-[64px] md:rounded-bl-[120px]"
+        className="pointer-events-none select-none absolute w-full h-full object-cover md:object-contain md:py-12 z-0 rounded-bl-[64px] md:rounded-bl-[120px]"
         draggable="false"
       />
       <div className="max-w-2xl mx-auto py-24 md:py-0 relative z-10 w-full">

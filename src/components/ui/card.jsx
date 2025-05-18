@@ -3,7 +3,7 @@ export default function Card({ children, image, reverse = false, onClick }) {
 
   return (
     <div
-      className={`group flex flex-col hover:cursor-pointer ${flexDirection} rounded-[24px] md:p-[24px] p-[16px] ring-border ring-[1px] bg-white gap-[24px] md:max-w-[1156px] sm:max-w-[554px] min-h-[300px] md:min-h-[400px] hover:ring-cardBorderHover hover:shadow-card hover:ring-[2px] transition-all ease-in-out h-auto`}
+      className={`group flex flex-col hover:cursor-pointer ${flexDirection} rounded-[24px] md:p-[24px] p-[16px] ring-border ring-[1px] bg-white gap-[24px] md:max-w-[1156px] sm:max-w-[554px] w-full min-h-[300px] md:min-h-[400px] hover:ring-cardBorderHover hover:shadow-card hover:ring-[2px] transition-all ease-in-out h-auto`}
       onClick={onClick}
       onKeyDown={(e) => {
         if (e.key === "Enter" || e.key === " ") {
@@ -21,9 +21,7 @@ export default function Card({ children, image, reverse = false, onClick }) {
                 className="absolute inset-0 w-full h-full object-cover rounded-[8px]"
               />
             ) : (
-              <div className="absolute inset-0 w-full h-full">
-                {image}
-              </div>
+              <div className="absolute inset-0 w-full h-full">{image}</div>
             )}
           </div>
         </div>
